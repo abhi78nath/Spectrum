@@ -18,7 +18,7 @@
 
 <link rel="stylesheet" href="css/owl.carousel.min.css">
 <link rel="stylesheet" href="css/owl.theme.default.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
 <link rel="stylesheet" href="css/style.css">
 
 
@@ -32,6 +32,10 @@
 <style>
   body{
     background: #2a2828;
+    
+  }
+  body::-webkit-scrollbar{
+    display:none
   }
     #hero {
         height: 90vh;
@@ -501,12 +505,15 @@
     /* position:absolute; */
     left: 0px;
   }
-  blog-slider__title p{
+  /* .blog-slider__content p{
     transform: translateY(-444px);
-  }
+  } */
 
 }
 @media screen and (max-height:390px){
+  .blog-content-adjust{
+    top: 35px;
+  }
   .blog-slider__img{
     height: 94%;
     width: 52%;
@@ -516,7 +523,7 @@
 </style>
 
 <body>
-    <!-- <div class="container-fluid" style="background-image: url(images/bg.jpg); background-size: cover; padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0;" id="main">
+     <div class="container-fluid" style="background:linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d); background-size: cover; padding-left: 0; padding-right: 0; margin-left: 0; margin-right: 0;" id="main">
         <nav class="navbar">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -536,7 +543,7 @@
                 </div>
             </div>
         </nav>
-        <div id="hero" class="container-fluid">
+        <!--<div id="hero" class="container-fluid">
             <div style="margin-top: 10vh" class="d-flex justify-content-center">
                 <div class="imgstyle">
                     <img src="images/spectrumlogo.png" alt="Spectrum Connect image" id="image1" />
@@ -580,7 +587,7 @@
           <div class="blog-slider__item swiper-slide">
             <div class="blog-slider__img">
               
-              <img src="posters/technical/Byte the code.png" alt="">
+              <img src="spectrumImg/posters/technical/Byte the code.png" alt="">
             </div>
             <div class="blog-slider__content blog-content-adjust">
               <p class="module-name">TECHNICAL</p>
@@ -620,7 +627,7 @@
           
           <div class="blog-slider__item swiper-slide">
             <div class="blog-slider__img">
-              <img src="posters/technical/ENIAC.png" alt="ENIAC">
+              <img src="./spectrumImg/posters/technical/ENIAC.png" alt="ENIAC">
             </div>
             <div class="blog-slider__content blog-content-adjust">
      
