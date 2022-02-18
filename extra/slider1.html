@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slider1</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="./style1.css">
+</head>
+
+<body>
+  <div class="container-slide">
+    <div class="sidebar">
+      <div style="background: linear-gradient(229.99deg, #a19e9e -26%, #2c2b2b 145%);">
+        <h1>Fantsy Soccer</h1>
+        <p>Worn out by cricket auctions? Well, it’s time we make a switch to ‘The Beautiful Game’.
+          Spectrum Connect tables Fantasy Soccer, a football auction event for all the soccer fanatics out there. Relish
+          this glorious opportunity to acquire your favourite stars including two of the greatest of all time, Lionel
+          Messi and Cristiano Ronaldo.
+          This event will consist of 2 rounds, the prelims followed by the finals. The finalists will be shortlisted
+          based on their knowledge of world football to be tested in the prelims.
+          So why wait? Hurry and click on this link to register yourselves:<br>
+
+          Note: Only the team leaders shall fill the form.<br>
+          Rules:<br>
+          1. A team can have a minimum of 2 and a maximum of 3 members.<br>
+          2. Only the team leaders shall join the WhatsApp group:<br>
+          Additional details will be shared in the WhatsApp group.<br>
+        </p>
+      </div>
+      <div style="background: linear-gradient(215.32deg, #ee9c3d -1%, #8e5c22 124%);">
+        <h1>Mountains</h1>
+        <p>Sun , Life</p>
+      </div>
+      <div style="background: linear-gradient(221.87deg, #66d7b0 1%, #46b2ec 128%);">
+        <h1>Mountains</h1>
+        <p>Summer, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+      <div style="background: linear-gradient(220.16deg, #213044 -8%, #0d1527 138%);">
+        <h1>Mountains</h1>
+        <p>Morning, Life</p>
+      </div>
+    </div>
+    <div class="main-slide">
+      <div style="
+            background-image: url('./imgs/Fantasy_Soccer_poster_pre-final.png');
+          "></div>
+      <div style="
+            background-image: url('./imgs/Fill\ the\ frame.jpg');
+          "></div>
+      <div style="
+            background-image: url('./imgs/Hour\ of\ Siege.jpg');
+          "></div>
+      <div style="
+            background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+          "></div>
+      <div style="
+          background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+        "></div>
+      <div style="
+        background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+      "></div>
+      <div style="
+      background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+    "></div>
+      <div style="
+    background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+  "></div>
+      <div style="
+  background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+"></div>
+      <div style="
+  background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+"></div>
+      <div style="
+  background-image: url('./imgs/pour\ your\ words\ \(3\).png');
+"></div>
+    </div>
+    <div class="controls">
+      <button class="down-button">
+        <i class="fas fa-arrow-down"></i>
+      </button>
+      <button class="up-button">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </div>
+  </div>
+  <script>
+    const downButton = document.querySelector('.down-button');
+    const upButton = document.querySelector('.up-button');
+    const sidebar = document.querySelector('.sidebar');
+    const mainSlide = document.querySelector('.main-slide');
+    const slidesCount = mainSlide.querySelectorAll('div').length;
+    const container = document.querySelector('.container-slide');
+
+    let activeSlideIndex = 0;
+
+    sidebar.style.top = `-${(slidesCount - 1) * 100}vh`;
+
+    function changeSlide(direction) {
+      if (direction === 'up') {
+        activeSlideIndex++;
+        if (activeSlideIndex === slidesCount) {
+          activeSlideIndex = 0;
+        }
+      }
+
+      else if (direction === 'down') {
+        activeSlideIndex--;
+        if (activeSlideIndex < 0) {
+          activeSlideIndex = slidesCount - 1;
+        }
+      }
+
+      const height = container.clientHeight;
+
+
+      mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
+      sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
+    }
+
+
+    downButton.addEventListener('click', () => {
+      changeSlide('down');
+    });
+
+    upButton.addEventListener('click', () => {
+      changeSlide('up');
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'ArrowUp') {
+        changeSlide('up');
+      }
+      else if (event.key === 'ArrowDown') {
+        changeSlide('down');
+      }
+    });
+  </script>
+</body>
+
+</html>
