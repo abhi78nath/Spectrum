@@ -10,15 +10,15 @@ app.get("/",function(req,res){
 })
 
 app.get("/techmodule",function(req,res){
-    res.render("../SpectrumModule/technical");
+    res.render("../spectrumModule/technical");
 
 });
 
 app.get("/litmodule", function(req, res){
-    res.render("../SpectrumModule/literary");
+    res.render("../spectrumModule/literary");
 });
 app.get("/funmodule", function(req, res){
-    res.render("../SpectrumModule/fun")
+    res.render("../spectrumModule/fun")
 });
 
 
